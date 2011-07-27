@@ -9,12 +9,10 @@ public class LatNode extends DSNode{
 	
 	public LatNode(int depth) {
 		super(depth);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public int compareTo(Object obj) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
@@ -71,6 +69,7 @@ public class LatNode extends DSNode{
 				}
 			}else if(this.objects.size()>10){ // you need to pick a split and create north south nodes
 				//find average
+				objects.add(dot);
 				double total=0;
 				for(int i=0;i<objects.size();i++){
 					total+=objects.get(i).lng;

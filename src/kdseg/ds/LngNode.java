@@ -9,13 +9,11 @@ public class LngNode extends DSNode{
 	
 	public LngNode(int depth) {
 		super(depth);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void addDot(Dot dot) {
 		try{
-			// TODO Auto-generated method stub
 			if(longitudeComparison!=-1000){ //this pass dot onto west or east node compared to comparison 
 				if(dot.lng>longitudeComparison){
 					this.eastNode.addDot(dot);
@@ -25,6 +23,7 @@ public class LngNode extends DSNode{
 			}else if(this.objects.size()>10){ // you need to pick a split and create east west nodes
 				//find average
 				double total=0;
+				objects.add(dot);
 				for(int i=0;i<objects.size();i++){
 					total+=objects.get(i).lng;
 				}
@@ -52,7 +51,6 @@ public class LngNode extends DSNode{
 
 	@Override
 	public int compareTo(Object obj) {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
