@@ -24,7 +24,7 @@ public class TimeSegNode extends DSNode{
 					center.addDot(dot);
 				}
 			}else{//check if at 10 yet, if so then create DSNode of type lngitude
-				if(this.objects.size()>10){
+				if(this.objects.size()>max){
 					objects.add(dot);
 					Long avestarttime= new Long(0);Long avestoptime=new Long(0);
 					for(int i=0;i<objects.size();i++){
@@ -119,4 +119,28 @@ public class TimeSegNode extends DSNode{
 		
 	}
 
+	public void print(LinkedList<StringBuffer> tree){
+		if(tree.size()<(depth+1)){
+			StringBuffer sb = new StringBuffer();
+			sb.append(" TSeg:");
+			for(int i=0;i<objects.size();i++){
+				Dot d=objects.get(i);
+				sb.append(d.userkey+",");
+			}
+			tree.add(depth, sb);
+		}else{
+			StringBuffer sb = tree.get(depth);
+			sb.append(" TSeg:");
+			for(int i=0;i<objects.size();i++){
+				Dot d=objects.get(i);
+				sb.append(d.userkey+",");
+			}
+		}
+		if(left!=null)
+			left.print(tree);
+		if(center!=null)
+			center.print(tree);
+		if(right!=null)
+			right.print(tree);
+	}
 }

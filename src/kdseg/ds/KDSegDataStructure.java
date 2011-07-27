@@ -20,4 +20,12 @@ public class KDSegDataStructure {
 		rootnode.searchDots(georng, timerng,result);
 		return result;
 	}
+	
+	public void printStructure(){
+		LinkedList<StringBuffer> tree = new LinkedList<StringBuffer>();
+		rootnode.print(tree);
+		for(int i=0;i<tree.size();i++){
+			System.out.println(tree.get(i).toString());
+		}
+	}
 }

@@ -20,7 +20,7 @@ public class LngNode extends DSNode{
 				}else{
 					this.westNode.addDot(dot);
 				}
-			}else if(this.objects.size()>10){ // you need to pick a split and create east west nodes
+			}else if(this.objects.size()>max){ // you need to pick a split and create east west nodes
 				//find average
 				double total=0;
 				objects.add(dot);
@@ -104,4 +104,30 @@ public class LngNode extends DSNode{
 		}
 	}
 
+	public void print(LinkedList<StringBuffer> tree){
+		if(tree.size()<(depth+1)){
+			StringBuffer sb = new StringBuffer();
+			sb.append(" Nlng:");
+			for(int i=0;i<objects.size();i++){
+				Dot d=objects.get(i);
+				sb.append(d.userkey+",");
+			}
+			tree.add(depth, sb);
+			if(westNode!=null)
+				westNode.print(tree);
+			if(eastNode!=null)
+				eastNode.print(tree);
+		}else{
+			StringBuffer sb = tree.get(depth);
+			sb.append(" Nlng:");
+			for(int i=0;i<objects.size();i++){
+				Dot d=objects.get(i);
+				sb.append(d.userkey+",");
+			}
+			if(westNode!=null)
+				westNode.print(tree);
+			if(eastNode!=null)
+				eastNode.print(tree);
+		}
+	}
 }

@@ -67,7 +67,7 @@ public class LatNode extends DSNode{
 				}else{
 					this.southNode.addDot(dot);
 				}
-			}else if(this.objects.size()>10){ // you need to pick a split and create north south nodes
+			}else if(this.objects.size()>max){ // you need to pick a split and create north south nodes
 				//find average
 				objects.add(dot);
 				double total=0;
@@ -108,4 +108,26 @@ public class LatNode extends DSNode{
 		}
 	}
 
+	public void print(LinkedList<StringBuffer> tree){
+		if(tree.size()<(depth+1)){
+			StringBuffer sb = new StringBuffer();
+			sb.append(" Nlat:");
+			for(int i=0;i<objects.size();i++){
+				Dot d=objects.get(i);
+				sb.append(d.userkey+",");
+			}
+			tree.add(depth, sb);
+		}else{
+			StringBuffer sb = tree.get(depth);
+			sb.append(" Nlat:");
+			for(int i=0;i<objects.size();i++){
+				Dot d=objects.get(i);
+				sb.append(d.userkey+",");
+			}
+		}
+		if(northNode!=null)
+			northNode.print(tree);
+		if(southNode!=null)
+			southNode.print(tree);
+	}
 }
