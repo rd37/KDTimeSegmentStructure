@@ -111,7 +111,7 @@ public class LatNode extends DSNode{
 	public void print(LinkedList<StringBuffer> tree){
 		if(tree.size()<(depth+1)){
 			StringBuffer sb = new StringBuffer();
-			sb.append(" Nlat:");
+			sb.append(" Nlat:"+this.latitudeComparison+":");
 			for(int i=0;i<objects.size();i++){
 				Dot d=objects.get(i);
 				sb.append(d.userkey+",");
@@ -119,7 +119,7 @@ public class LatNode extends DSNode{
 			tree.add(depth, sb);
 		}else{
 			StringBuffer sb = tree.get(depth);
-			sb.append(" Nlat:");
+			sb.append(" Nlat:"+this.latitudeComparison+":");
 			for(int i=0;i<objects.size();i++){
 				Dot d=objects.get(i);
 				sb.append(d.userkey+",");

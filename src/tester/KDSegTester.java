@@ -1,5 +1,6 @@
 package tester;
 
+import java.util.LinkedList;
 import java.util.Random;
 
 import kdseg.ds.Dot;
@@ -8,6 +9,7 @@ import kdseg.ds.TimeSegment;
 
 public class KDSegTester {
 	private KDSegDataStructure structure = new KDSegDataStructure();
+	private LinkedList<Dot> list = new LinkedList<Dot>();
 	/**
 	 * @param args
 	 */
@@ -15,7 +17,7 @@ public class KDSegTester {
 	
 	public void execute(){
 		Random random = new Random(567);
-		for(int i=0;i<5;i++){
+		for(int i=0;i<25;i++){
 			Long stoptime = System.currentTimeMillis()/(1+i);
 			Long starttime = System.currentTimeMillis()/(2+i);
 			int keyInt = (int)(random.nextDouble()*1000);
@@ -24,6 +26,8 @@ public class KDSegTester {
 			structure.addDot(d);
 		}
 		structure.printStructure();
+		System.out.println("----------");
+		
 	}
 	
 	public static void main(String[] args) {

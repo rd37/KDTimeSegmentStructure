@@ -122,18 +122,24 @@ public class TimeSegNode extends DSNode{
 	public void print(LinkedList<StringBuffer> tree){
 		if(tree.size()<(depth+1)){
 			StringBuffer sb = new StringBuffer();
-			sb.append(" TSeg:");
+			if(centerComparison!=null)
+				sb.append(" TSeg:"+this.centerComparison.starttime+":"+this.centerComparison.stoptime+" ");
+			else
+				sb.append(" TSeg:");
 			for(int i=0;i<objects.size();i++){
 				Dot d=objects.get(i);
-				sb.append(d.userkey+",");
+				sb.append("UK:"+d.userkey+": ");
 			}
 			tree.add(depth, sb);
 		}else{
 			StringBuffer sb = tree.get(depth);
-			sb.append(" TSeg:");
+			if(centerComparison!=null)
+				sb.append(" TSeg:"+this.centerComparison.starttime+":"+this.centerComparison.stoptime+" ");
+			else
+				sb.append(" TSeg:");
 			for(int i=0;i<objects.size();i++){
 				Dot d=objects.get(i);
-				sb.append(d.userkey+",");
+				sb.append("UK:"+d.userkey+": ");
 			}
 		}
 		if(left!=null)

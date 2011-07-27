@@ -107,10 +107,10 @@ public class LngNode extends DSNode{
 	public void print(LinkedList<StringBuffer> tree){
 		if(tree.size()<(depth+1)){
 			StringBuffer sb = new StringBuffer();
-			sb.append(" Nlng:");
+			sb.append(" Nlng:"+this.longitudeComparison+":");
 			for(int i=0;i<objects.size();i++){
 				Dot d=objects.get(i);
-				sb.append(d.userkey+",");
+				sb.append("UK:"+d.userkey+": ");
 			}
 			tree.add(depth, sb);
 			if(westNode!=null)
@@ -119,10 +119,10 @@ public class LngNode extends DSNode{
 				eastNode.print(tree);
 		}else{
 			StringBuffer sb = tree.get(depth);
-			sb.append(" Nlng:");
+			sb.append(" Nlng:"+this.longitudeComparison+":");
 			for(int i=0;i<objects.size();i++){
 				Dot d=objects.get(i);
-				sb.append(d.userkey+",");
+				sb.append("UK:"+d.userkey+": ");
 			}
 			if(westNode!=null)
 				westNode.print(tree);
