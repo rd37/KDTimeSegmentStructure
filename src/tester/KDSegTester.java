@@ -33,18 +33,18 @@ public class KDSegTester {
 			Dot d = list.get(i);
 			System.out.println(d.userkey+":::"+d.lat+":"+d.lng+" "+d.seg.starttime+":"+d.seg.stoptime);
 		}
-		Double lat1 = new Double(-69);
-		Double lng1 = new Double(-11);
-		Double lat2 = new Double(-70);
-		Double lng2 = new Double(-10);
+		Double lat1 = new Double(-119);
+		Double lng1 = new Double(147);
+		Double lat2 = new Double(-120);
+		Double lng2 = new Double(149);
 		//Long starttime = new Long(655874753);
 		//Long stoptime = new Long(1311749506);
-		Long starttime = new Long(455874753);
-		Long stoptime = new Long(755874753);
+		Long starttime = new Long(155874753);
+		Long stoptime = new Long(1355874753);
 		LinkedList<Dot> searchResults = structure.searchDots(new GeographicalRange(lat1,lng1,lat2,lng2), new TimeSegment(starttime,stoptime));
 		System.out.println("***results****");
 		for(int i=0;i<searchResults.size();i++){
-			Dot d = list.get(i);
+			Dot d = searchResults.get(i);
 			System.out.println(d.userkey+":::"+d.lat+":"+d.lng+" "+d.seg.starttime+":"+d.seg.stoptime);
 		}
 	}

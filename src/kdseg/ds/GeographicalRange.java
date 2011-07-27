@@ -13,6 +13,7 @@ public class GeographicalRange {
 	public boolean containsDot(Dot d){
 		if(lngwest<d.lng && lngeast>d.lng){
 			if(latnorth>d.lat && latsouth<d.lat){
+				System.out.println(d.userkey+" d.lng "+d.lng+" d,lat "+d.lat+"   georgn:west "+lngwest+" east "+lngeast+" north "+latnorth+" lngsouth "+latsouth);
 				return true;
 			}else{
 				return false;

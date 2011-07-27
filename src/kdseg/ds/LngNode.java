@@ -86,6 +86,7 @@ public class LngNode extends DSNode{
 			for(int i=0;i<objects.size();i++){
 				Dot d=objects.get(i);
 				if(georng.containsDot(d) && timerng.containsDotTime(d)){
+					System.out.println("Adding result "+d.userkey);
 					result.add(d);
 				}
 			}
