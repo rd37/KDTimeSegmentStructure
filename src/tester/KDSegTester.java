@@ -22,8 +22,8 @@ public class KDSegTester {
 			Long stoptime = System.currentTimeMillis()/(1000+i);
 			Long starttime = System.currentTimeMillis()/(2000+i);
 			int keyInt = (int)(random.nextDouble()*1000);
-			double key = ((double)keyInt)/1000;
-			Dot d = new Dot( (random.nextDouble()-0.5)*300, (random.nextDouble()-0.5)*300, new TimeSegment(starttime,stoptime),key);
+			//double key = ((double)keyInt)/1000;
+			Dot d = new Dot( (random.nextDouble()-0.5)*300, (random.nextDouble()-0.5)*300, new TimeSegment(starttime,stoptime),keyInt);
 			structure.addDot(d);
 			list.add(d);
 		}
