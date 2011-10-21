@@ -3,9 +3,12 @@ package kdseg.ds;
 import java.util.LinkedList;
 
 public class KDSegDataStructure {
+	private static KDSegDataStructure kd = new KDSegDataStructure();
 	public DSNode rootnode=new LngNode(0);//create new node at level zero
 	
-	public KDSegDataStructure(){}
+	private KDSegDataStructure(){}
+	
+	public static KDSegDataStructure getInstance(){return kd;};
 	
 	public void addDot(Dot dot){
 		rootnode.addDot(dot);

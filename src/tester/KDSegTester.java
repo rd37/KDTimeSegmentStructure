@@ -9,7 +9,7 @@ import kdseg.ds.KDSegDataStructure;
 import kdseg.ds.TimeSegment;
 
 public class KDSegTester {
-	private KDSegDataStructure structure = new KDSegDataStructure();
+	private KDSegDataStructure structure = KDSegDataStructure.getInstance();
 	private LinkedList<Dot> list = new LinkedList<Dot>();
 	/**
 	 * @param args
